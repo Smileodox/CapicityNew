@@ -46,8 +46,68 @@ cmake_ninja_workdir = /Users/paulkeck/Documents/Uni/CLion_Workspace/CapicityNew/
 
 build cmake_object_order_depends_target_CapicityNew: phony || CMakeFiles/CapicityNew.dir
 
-build CMakeFiles/CapicityNew.dir/main.cpp.o: CXX_COMPILER__CapicityNew_Debug /Users/paulkeck/Documents/Uni/CLion_Workspace/CapicityNew/main.cpp || cmake_object_order_depends_target_CapicityNew
-  DEP_FILE = CMakeFiles/CapicityNew.dir/main.cpp.o.d
+build CMakeFiles/CapicityNew.dir/CapicitySim.cpp.o: CXX_COMPILER__CapicityNew_Debug /Users/paulkeck/Documents/Uni/CLion_Workspace/CapicityNew/CapicitySim.cpp || cmake_object_order_depends_target_CapicityNew
+  DEP_FILE = CMakeFiles/CapicityNew.dir/CapicitySim.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++14
+  OBJECT_DIR = CMakeFiles/CapicityNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CapicityNew.dir
+
+build CMakeFiles/CapicityNew.dir/Building.cpp.o: CXX_COMPILER__CapicityNew_Debug /Users/paulkeck/Documents/Uni/CLion_Workspace/CapicityNew/Building.cpp || cmake_object_order_depends_target_CapicityNew
+  DEP_FILE = CMakeFiles/CapicityNew.dir/Building.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++14
+  OBJECT_DIR = CMakeFiles/CapicityNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CapicityNew.dir
+
+build CMakeFiles/CapicityNew.dir/Holz.cpp.o: CXX_COMPILER__CapicityNew_Debug /Users/paulkeck/Documents/Uni/CLion_Workspace/CapicityNew/Holz.cpp || cmake_object_order_depends_target_CapicityNew
+  DEP_FILE = CMakeFiles/CapicityNew.dir/Holz.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++14
+  OBJECT_DIR = CMakeFiles/CapicityNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CapicityNew.dir
+
+build CMakeFiles/CapicityNew.dir/Kunststoff.cpp.o: CXX_COMPILER__CapicityNew_Debug /Users/paulkeck/Documents/Uni/CLion_Workspace/CapicityNew/Kunststoff.cpp || cmake_object_order_depends_target_CapicityNew
+  DEP_FILE = CMakeFiles/CapicityNew.dir/Kunststoff.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++14
+  OBJECT_DIR = CMakeFiles/CapicityNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CapicityNew.dir
+
+build CMakeFiles/CapicityNew.dir/Leer.cpp.o: CXX_COMPILER__CapicityNew_Debug /Users/paulkeck/Documents/Uni/CLion_Workspace/CapicityNew/Leer.cpp || cmake_object_order_depends_target_CapicityNew
+  DEP_FILE = CMakeFiles/CapicityNew.dir/Leer.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++14
+  OBJECT_DIR = CMakeFiles/CapicityNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CapicityNew.dir
+
+build CMakeFiles/CapicityNew.dir/Material.cpp.o: CXX_COMPILER__CapicityNew_Debug /Users/paulkeck/Documents/Uni/CLion_Workspace/CapicityNew/Material.cpp || cmake_object_order_depends_target_CapicityNew
+  DEP_FILE = CMakeFiles/CapicityNew.dir/Material.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++14
+  OBJECT_DIR = CMakeFiles/CapicityNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CapicityNew.dir
+
+build CMakeFiles/CapicityNew.dir/Metall.cpp.o: CXX_COMPILER__CapicityNew_Debug /Users/paulkeck/Documents/Uni/CLion_Workspace/CapicityNew/Metall.cpp || cmake_object_order_depends_target_CapicityNew
+  DEP_FILE = CMakeFiles/CapicityNew.dir/Metall.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++14
+  OBJECT_DIR = CMakeFiles/CapicityNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CapicityNew.dir
+
+build CMakeFiles/CapicityNew.dir/Solarpanel.cpp.o: CXX_COMPILER__CapicityNew_Debug /Users/paulkeck/Documents/Uni/CLion_Workspace/CapicityNew/Solarpanel.cpp || cmake_object_order_depends_target_CapicityNew
+  DEP_FILE = CMakeFiles/CapicityNew.dir/Solarpanel.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++14
+  OBJECT_DIR = CMakeFiles/CapicityNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CapicityNew.dir
+
+build CMakeFiles/CapicityNew.dir/Wasserkraftwerk.cpp.o: CXX_COMPILER__CapicityNew_Debug /Users/paulkeck/Documents/Uni/CLion_Workspace/CapicityNew/Wasserkraftwerk.cpp || cmake_object_order_depends_target_CapicityNew
+  DEP_FILE = CMakeFiles/CapicityNew.dir/Wasserkraftwerk.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++14
+  OBJECT_DIR = CMakeFiles/CapicityNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CapicityNew.dir
+
+build CMakeFiles/CapicityNew.dir/Windkraftwerk.cpp.o: CXX_COMPILER__CapicityNew_Debug /Users/paulkeck/Documents/Uni/CLion_Workspace/CapicityNew/Windkraftwerk.cpp || cmake_object_order_depends_target_CapicityNew
+  DEP_FILE = CMakeFiles/CapicityNew.dir/Windkraftwerk.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++14
+  OBJECT_DIR = CMakeFiles/CapicityNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CapicityNew.dir
+
+build CMakeFiles/CapicityNew.dir/CapicityMain.cpp.o: CXX_COMPILER__CapicityNew_Debug /Users/paulkeck/Documents/Uni/CLion_Workspace/CapicityNew/CapicityMain.cpp || cmake_object_order_depends_target_CapicityNew
+  DEP_FILE = CMakeFiles/CapicityNew.dir/CapicityMain.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++14
   OBJECT_DIR = CMakeFiles/CapicityNew.dir
   OBJECT_FILE_DIR = CMakeFiles/CapicityNew.dir
@@ -60,7 +120,7 @@ build CMakeFiles/CapicityNew.dir/main.cpp.o: CXX_COMPILER__CapicityNew_Debug /Us
 #############################################
 # Link the executable CapicityNew
 
-build CapicityNew: CXX_EXECUTABLE_LINKER__CapicityNew_Debug CMakeFiles/CapicityNew.dir/main.cpp.o
+build CapicityNew: CXX_EXECUTABLE_LINKER__CapicityNew_Debug CMakeFiles/CapicityNew.dir/CapicitySim.cpp.o CMakeFiles/CapicityNew.dir/Building.cpp.o CMakeFiles/CapicityNew.dir/Holz.cpp.o CMakeFiles/CapicityNew.dir/Kunststoff.cpp.o CMakeFiles/CapicityNew.dir/Leer.cpp.o CMakeFiles/CapicityNew.dir/Material.cpp.o CMakeFiles/CapicityNew.dir/Metall.cpp.o CMakeFiles/CapicityNew.dir/Solarpanel.cpp.o CMakeFiles/CapicityNew.dir/Wasserkraftwerk.cpp.o CMakeFiles/CapicityNew.dir/Windkraftwerk.cpp.o CMakeFiles/CapicityNew.dir/CapicityMain.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk
   OBJECT_DIR = CMakeFiles/CapicityNew.dir
   POST_BUILD = :
