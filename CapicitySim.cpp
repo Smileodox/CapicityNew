@@ -10,6 +10,7 @@
 #include "Wasserkraftwerk.h"
 #include "Solarpanel.h"
 #include "Blueprint.h"
+#include <algorithm>
 #include <vector>
 
 
@@ -33,7 +34,7 @@ void CapicitySim::hauptMenue() {
 
     FunktorVergleich verg;
     bool loop = true;
-    int choice, choice_gebäude, temp_startZeile, temp_startSpalte, temp_zeilenAnz, temp_spaltenAnz;
+    int choice, choice_gebaeude, temp_startZeile, temp_startSpalte, temp_zeilenAnz, temp_spaltenAnz;
     int tempIDermittlung = -1;
 
 
@@ -43,26 +44,27 @@ void CapicitySim::hauptMenue() {
         cout << "\t1. Gebäude setzen" << endl;
         cout << "\t2. Bereich löschen" << endl;
         cout << "\t3. Ausgaben des aktuellen Bauplans" << endl;
-        cout << "\t4. Neuen Bauplan erstellen" << endl;
-        cout << "\t5. Bauplan auswählen" << endl;
-        cout << "\t6. Beenden\n" << endl;
+        cout << "\t4. Ausgabe ALLER Baupläne" << endl;
+        cout << "\t5. Neuen Bauplan erstellen" << endl;
+        cout << "\t6. Bauplan auswählen" << endl;
+        cout << "\t7. Beenden\n" << endl;
 
         cin >> choice;
 
         switch (choice) {
 
-            case 1:
+            case 1: {
                 cout << "Sie haben Gebäude setzen gewählt" << endl;
 
                 cout << "Bitte Gebäudeart wählen" << endl;
                 cout << "\t1. WASSERKRAFTWERK" << endl;
                 cout << "\t2. WINDKRAFTWERK" << endl;
                 cout << "\t3. SOLARPANEL\n" << endl;
-                cin >> choice_gebäude;
+                cin >> choice_gebaeude;
 
-                switch (choice_gebäude) {
+                switch (choice_gebaeude) {
 
-                    case 1:
+                    case 1: {
                         cout << "Sie haben Wasserkraftwerk gewählt\n" << endl;
 
                         cout << "Bitte Startzeile (oberes linkes Gebäudeeck) eingeben\n";
@@ -78,10 +80,10 @@ void CapicitySim::hauptMenue() {
                         cin >> temp_spaltenAnz;
 
                         plaene[aktuellePlanID]->gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
-                                              temp_spaltenAnz, new Wasserkraftwerk());
+                                                                      temp_spaltenAnz, new Wasserkraftwerk());
                         break;
-
-                    case 2:
+                    }
+                    case 2: {
                         cout << "Sie haben Windkraftwerk gewählt\n" << endl;
 
                         cout << "Bitte Startzeile (oberes linkes Gebäudeeck) eingeben\n";
@@ -97,11 +99,11 @@ void CapicitySim::hauptMenue() {
                         cin >> temp_spaltenAnz;
 
                         plaene[aktuellePlanID]->gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
-                                              temp_spaltenAnz, new Windkraftwerk());
+                                                                      temp_spaltenAnz, new Windkraftwerk());
 
                         break;
-
-                    case 3:
+                    }
+                    case 3: {
                         cout << "Sie haben Solarpanel gewählt\n" << endl;
 
                         cout << "Bitte Startzeile (oberes linkes Gebäudeeck) eingeben\n";
@@ -117,15 +119,16 @@ void CapicitySim::hauptMenue() {
                         cin >> temp_spaltenAnz;
 
                         plaene[aktuellePlanID]->gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
-                                              temp_spaltenAnz, new Solarpanel());
+                                                                      temp_spaltenAnz, new Solarpanel());
 
                         break;
-
+                    }
                 }
 
                 break;
+            }
 
-            case 2:
+            case 2: {
                 cout << "Sie haben Bereich löschen gewählt" << endl;
 
                 cout << "Bitte Startzeile (oberes linkes Gebäudeeck) eingeben\n";
@@ -148,37 +151,54 @@ void CapicitySim::hauptMenue() {
                 //}
 
                 plaene[aktuellePlanID]->gebaeudeSetzen(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
-                               temp_spaltenAnz, new Leer());
+                                                       temp_spaltenAnz, new Leer());
 
                 break;
+            }
 
-            case 3:
+            case 3: {
                 cout << "Sie haben Ausgabe des aktuellen Bauplans gewählt\n" << endl;
 
                 plaene[aktuellePlanID]->printFlaeche();
 
                 break;
+            }
+
+            case 4: {
+
+                vector<Blueprint *> plaeneKopie = plaene;
+
+                std::sort(plaeneKopie.begin(), plaeneKopie.end(), [](Blueprint* p1, Blueprint* p2)
+                -> bool { return p1->kennzahl() > p2->kennzahl();});
+
+                for(int i = 0; i < plaeneKopie.size(); i++){
+                    plaeneKopie[i]->printFlaeche();
+                }
 
 
-            case 4:
+                break;
+            }
 
+            case 5: {
+                cout << "Sie haben erstellen eines neuen Bauplans gewählt\n" << endl;
 
-                for(Blueprint* plan : plaene){
-                    if(plan != plaene[aktuellePlanID] && verg(plaene[aktuellePlanID], plan)){
+                for (Blueprint *plan: plaene) {
+                    if (plan != plaene[aktuellePlanID] && verg(plaene[aktuellePlanID], plan)) {
 
-                        cout<<"Der aktuelle Plan ist identisch zu einem bereits vorhandenen, der aktuelle Plan wird gelöscht\n";
-                        verg.istIdent=true;
+                        cout
+                                << "Der aktuelle Plan ist identisch zu einem bereits vorhandenen, der aktuelle Plan wird gelöscht\n";
+                        verg.istIdent = true;
                         break;
                     }
                 }
 
-                if(verg.istIdent){
+                if (verg.istIdent) {
                     plaene.pop_back();
                 }
 
-                for(Blueprint* plan : plaene){
-                    if(plan->planID>tempIDermittlung)
-                        tempIDermittlung=plan->planID;
+                for (Blueprint *plan: plaene) {
+                    if (plan->planID > tempIDermittlung)
+                        tempIDermittlung = plan->planID;
                 }
                 aktuellePlanID = tempIDermittlung + 1;
 
@@ -186,29 +206,33 @@ void CapicitySim::hauptMenue() {
 
                 plaene[aktuellePlanID]->initialieserePlan();
 
-                verg.istIdent=false;
+                verg.istIdent = false;
 
                 break;
+        }
 
+            case 6: {
 
-            case 5:
-                for(Blueprint* plan : plaene){
+                cout << "Sie haben Bauplan auswählen gewählt\n" << endl;
 
-                    cout<<plan->planName<<"\t"<<plan->planID<<endl;
+                for (Blueprint *plan: plaene) {
+
+                    cout << plan->planName << "\t" << plan->planID << endl;
 
                 }
 
-                cout<<"\nBitte PlanID des gewählten Plans eingeben";
+                cout << "\nBitte PlanID des gewählten Plans eingeben";
                 cin >> aktuellePlanID;
 
 
                 break;
+            }
 
-
-            case 6:
+            case 7: {
                 cout << "Sie haben Beenden gewählt" << endl;
                 loop = false;
                 break;
+            }
         }
 
     }
