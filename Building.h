@@ -33,8 +33,12 @@ public:
 
     int getLeistung();
 
+    virtual ~Building();
+
 
     std::map<Material*, int> materialien;
+
+
 
 
 };

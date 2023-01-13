@@ -79,8 +79,8 @@ void CapicitySim::hauptMenue() {
                         cout << "Bitte Spaltenanzahl des Gebäudes eingeben\n";
                         cin >> temp_spaltenAnz;
 
-                        plaene[aktuellePlanID]->gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
-                                                                      temp_spaltenAnz, new Wasserkraftwerk());
+                        plaene[aktuellePlanID]->gebaeudeSetzenMitTest<Wasserkraftwerk>(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
+                                                                      temp_spaltenAnz);
                         break;
                     }
                     case 2: {
@@ -98,8 +98,8 @@ void CapicitySim::hauptMenue() {
                         cout << "Bitte Spaltenanzahl des Gebäudes eingeben\n";
                         cin >> temp_spaltenAnz;
 
-                        plaene[aktuellePlanID]->gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
-                                                                      temp_spaltenAnz, new Windkraftwerk());
+                        plaene[aktuellePlanID]->gebaeudeSetzenMitTest<Windkraftwerk>(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
+                                                                      temp_spaltenAnz);
 
                         break;
                     }
@@ -118,8 +118,8 @@ void CapicitySim::hauptMenue() {
                         cout << "Bitte Spaltenanzahl des Gebäudes eingeben\n";
                         cin >> temp_spaltenAnz;
 
-                        plaene[aktuellePlanID]->gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
-                                                                      temp_spaltenAnz, new Solarpanel());
+                        plaene[aktuellePlanID]->gebaeudeSetzenMitTest<Solarpanel>(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
+                                                                      temp_spaltenAnz);
 
                         break;
                     }
@@ -143,15 +143,9 @@ void CapicitySim::hauptMenue() {
                 cout << "Bitte Spaltenanzahl des Gebäudes eingeben\n";
                 cin >> temp_spaltenAnz;
 
-                //Delete die Instanz vom vorherigen Builing solange der Pointer noch existiert --> keine MemoryLeaks
-                //for(int i = temp_startZeile - 1; i < temp_startZeile - 1 + temp_zeilenAnz; i++){
-                //for(int j = temp_startSpalte - 1; j < temp_startSpalte - 1 + temp_spaltenAnz; j++){
-                //delete gebaeude[i][j] ;
-                //}
-                //}
 
-                plaene[aktuellePlanID]->gebaeudeSetzen(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
-                                                       temp_spaltenAnz, new Leer());
+                plaene[aktuellePlanID]->gebaeudeSetzen<Leer>(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
+                                                       temp_spaltenAnz);
 
                 break;
             }
@@ -193,6 +187,7 @@ void CapicitySim::hauptMenue() {
                 }
 
                 if (verg.istIdent) {
+                    delete plaene[aktuellePlanID];
                     plaene.pop_back();
                 }
 

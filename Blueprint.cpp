@@ -54,61 +54,8 @@ void Blueprint::printFlaeche() {
 
 }
 
-void Blueprint::gebaeudeSetzenMitTest(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz,
-                                      Building *zuBauendesGebaeude){
-
-    bool test = false;
-    bool outOfBounds = false;
 
 
-    if(startZeile > gebaeude.size() || startSpalte > gebaeude[0].size()
-       || (startSpalte - 1 + spaltenAnz) > gebaeude[0].size() || (startZeile - 1 + zeilenAnz) >
-                                                                 gebaeude.size()){
-
-        std::cout<< "Gebäude ist out of Bounds\n"<<endl;
-        outOfBounds = true;
-
-
-    }else{
-        for (int i = startZeile - 1; i < startZeile - 1 + zeilenAnz; i++) {
-            for (int j = startSpalte - 1; j < startSpalte - 1 + spaltenAnz; j++) {
-                if (gebaeude[i][j]->gebaeudeID != 0){
-                    test = true;
-
-                }
-            }
-        }
-
-
-    }
-
-    if(test == true) {
-
-        cout << "Gebäude kollidiert mit anderen Gebäuden, Vorgang wird abgebrochen\n" << endl;
-
-    } else if(outOfBounds != true){
-
-        for(int i = startZeile - 1; i < startZeile - 1 + zeilenAnz; i++){
-            for(int j = startSpalte - 1; j < startSpalte - 1 + spaltenAnz; j++){
-                gebaeude[i][j] = zuBauendesGebaeude;
-            }
-        }
-
-    }
-
-
-}
-
-void Blueprint::gebaeudeSetzen(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz,
-                               Building *zuBauendesGebaeude) {
-
-    for(int i = startZeile - 1; i < startZeile - 1 + zeilenAnz; i++){
-        for(int j = startSpalte - 1; j < startSpalte - 1 + spaltenAnz; j++){
-            gebaeude[i][j] = zuBauendesGebaeude;
-        }
-    }
-
-}
 
 Blueprint::Blueprint(int neueID, std::string name) : planID(neueID), planName(name)
 {
@@ -139,6 +86,16 @@ float Blueprint::kennzahl() {
 
 
     return kennzahl;
+}
+
+Blueprint::~Blueprint() {
+for(vector<Building*> row : gebaeude) {
+    for(Building* geb : row){
+        delete geb;
+    }
+
+}
+
 }
 
 

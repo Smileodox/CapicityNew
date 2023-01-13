@@ -12,8 +12,6 @@ bool FunktorVergleich::operator()(Blueprint *geb1, Blueprint *geb2) {
             for(int j = 0; j < geb1->spalten; j++){
                 if(geb1->gebaeude[i][j]->gebaeudeID != geb2->gebaeude[i][j]->gebaeudeID) {
                     return false;
-                }else {
-                    return true;
                 }
             }
         }
@@ -21,5 +19,5 @@ bool FunktorVergleich::operator()(Blueprint *geb1, Blueprint *geb2) {
     } else{
         return false;
     }
-
+    return true;
 }

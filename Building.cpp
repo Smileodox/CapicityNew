@@ -40,3 +40,9 @@ std::string Building::auflistung()
 int Building::getLeistung() {
     return gebaudeLeistung;
 }
+
+Building::~Building() {
+    for(std::pair<Material*, int> paar : materialien) {
+        delete paar.first;
+    }
+}
