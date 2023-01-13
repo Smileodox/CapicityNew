@@ -7,7 +7,9 @@
 #include "Kunststoff.h"
 #include "Metall.h"
 
-Wasserkraftwerk::Wasserkraftwerk() : Building("Wasserkraftwerk",1, 1, { new Kunststoff(), new Holz(), new Holz(), new Metall() })
+Wasserkraftwerk::Wasserkraftwerk() : Building("Wasserkraftwerk",1, 1,
+                                              {{new Holz(), 2},
+                                               {new Metall(), 3}, {new Kunststoff(), 1} })
 {
 
 }

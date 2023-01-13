@@ -7,7 +7,8 @@
 #include "Kunststoff.h"
 #include "Metall.h"
 
-Solarpanel::Solarpanel() : Building("Solarpanel", 3, 3, {new Kunststoff(), new Kunststoff()})
+Solarpanel::Solarpanel() : Building("Solarpanel", 3, 3,
+                                    {{new Kunststoff(), 4}, {new Metall(), 2}})
 {
 
 }

@@ -7,10 +7,15 @@
 
 
 #include "Building.h"
+#include "Holz.h"
+#include "Kunststoff.h"
+#include "Metall.h"
 
 class Solarpanel : public Building{
 public:
     Solarpanel();
+
+
 
 };
 

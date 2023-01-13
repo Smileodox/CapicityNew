@@ -6,15 +6,17 @@
 #define CAPICITYNEW_BUILDING_H
 
 #include <string>
-#include <vector>
-#include "Material.h"
+#include <map>              //Kapitel 3: Lösung mit Maps in den Buildings realisiert,
+#include "Material.h"                           //erschien mir ehrlich gesagt einfacher
+
+
 
 
 
 class Building {
 
 public:
-    Building(std::string name, int id, int gebPreis, std::vector<Material*> benMaterialien);
+    Building(std::string name, int id, int gebPreis, std::map<Material*, int> benMaterialien);
 
     std::string gebaeudeName;
 
@@ -27,7 +29,10 @@ public:
 
     std::string auflistung();
 
-    std::vector<Material*> materialien;
+
+    std::map<Material*, int> materialien;
+
+
 };
 
 
