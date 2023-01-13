@@ -14,6 +14,12 @@ class Blueprint {
     
 public:
 
+    Blueprint(int neueID, std::string name);
+
+    int planID;
+
+    std::string planName;
+
     int reihen;
     int spalten;
     
@@ -23,6 +29,8 @@ public:
     void printFlaeche();
     void gebaeudeSetzenMitTest(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz, Building* zuBauendesGebaeude);
     void gebaeudeSetzen(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz, Building* zuBauendesGebaeude);
+
+    static std::string auffordernName();
 
 };
 

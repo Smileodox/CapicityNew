@@ -15,7 +15,13 @@
 
 void CapicitySim::start() {
 
-    aktuell.initialieserePlan();
+    aktuellePlanID = 0;
+
+    plaene.push_back(new Blueprint(aktuellePlanID, Blueprint::auffordernName()));
+
+    plaene[aktuellePlanID]->initialieserePlan();
+
+
 
     hauptMenue();
 
@@ -27,6 +33,7 @@ void CapicitySim::hauptMenue() {
 
     bool loop = true;
     int choice, choice_gebäude, temp_startZeile, temp_startSpalte, temp_zeilenAnz, temp_spaltenAnz;
+    int tempIDermittlung = -1;
 
 
 
@@ -35,7 +42,9 @@ void CapicitySim::hauptMenue() {
         cout << "\t1. Gebäude setzen" << endl;
         cout << "\t2. Bereich löschen" << endl;
         cout << "\t3. Ausgaben des aktuellen Bauplans" << endl;
-        cout << "\t4. Beenden\n" << endl;
+        cout << "\t4. Neuen Bauplan erstellen" << endl;
+        cout << "\t5. Bauplan auswählen" << endl;
+        cout << "\t6. Beenden\n" << endl;
 
         cin >> choice;
 
@@ -67,7 +76,7 @@ void CapicitySim::hauptMenue() {
                         cout << "Bitte Spaltenanzahl des Gebäudes eingeben\n";
                         cin >> temp_spaltenAnz;
 
-                        aktuell.gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
+                        plaene[aktuellePlanID]->gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
                                               temp_spaltenAnz, new Wasserkraftwerk());
                         break;
 
@@ -86,7 +95,7 @@ void CapicitySim::hauptMenue() {
                         cout << "Bitte Spaltenanzahl des Gebäudes eingeben\n";
                         cin >> temp_spaltenAnz;
 
-                        aktuell.gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
+                        plaene[aktuellePlanID]->gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
                                               temp_spaltenAnz, new Windkraftwerk());
 
                         break;
@@ -106,7 +115,7 @@ void CapicitySim::hauptMenue() {
                         cout << "Bitte Spaltenanzahl des Gebäudes eingeben\n";
                         cin >> temp_spaltenAnz;
 
-                        aktuell.gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
+                        plaene[aktuellePlanID]->gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
                                               temp_spaltenAnz, new Solarpanel());
 
                         break;
@@ -137,7 +146,7 @@ void CapicitySim::hauptMenue() {
                 //}
                 //}
 
-                aktuell.gebaeudeSetzen(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
+                plaene[aktuellePlanID]->gebaeudeSetzen(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
                                temp_spaltenAnz, new Leer());
 
                 break;
@@ -145,11 +154,41 @@ void CapicitySim::hauptMenue() {
             case 3:
                 cout << "Sie haben Ausgabe des aktuellen Bauplans gewählt\n" << endl;
 
-                aktuell.printFlaeche();
+                plaene[aktuellePlanID]->printFlaeche();
 
                 break;
 
+
             case 4:
+                for(Blueprint* plan : plaene){
+                    if(plan->planID>tempIDermittlung)
+                        tempIDermittlung=plan->planID;
+                }
+                aktuellePlanID = tempIDermittlung + 1;
+
+                plaene.push_back(new Blueprint(aktuellePlanID, Blueprint::auffordernName()));
+
+                plaene[aktuellePlanID]->initialieserePlan();
+
+
+                break;
+
+
+            case 5:
+                for(Blueprint* plan : plaene){
+
+                    cout<<plan->planName<<"\t"<<plan->planID<<endl;
+
+                }
+
+                cout<<"\nBitte PlanID des gewählten Plans eingeben";
+                cin >> aktuellePlanID;
+
+
+                break;
+
+
+            case 6:
                 cout << "Sie haben Beenden gewählt" << endl;
                 loop = false;
                 break;
@@ -158,5 +197,7 @@ void CapicitySim::hauptMenue() {
     }
 
 }
+
+
 
 

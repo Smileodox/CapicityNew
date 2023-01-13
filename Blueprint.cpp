@@ -106,3 +106,17 @@ void Blueprint::gebaeudeSetzen(int startZeile, int startSpalte, int zeilenAnz, i
     }
 
 }
+
+Blueprint::Blueprint(int neueID, std::string name) : planID(neueID), planName(name)
+{
+
+}
+
+std::string Blueprint::auffordernName() {
+    std::string temp;
+    cout<<"\tBitte Namen für neuen Plan eingeben\n"<<endl;
+    cin>> temp;
+    return temp;
+}
+
+
