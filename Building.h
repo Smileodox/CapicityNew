@@ -16,13 +16,15 @@
 class Building {
 
 public:
-    Building(std::string name, int id, int gebPreis, std::map<Material*, int> benMaterialien);
+    Building(std::string name, int id, int gebPreis, int leistung, std::map<Material*, int> benMaterialien);
 
     std::string gebaeudeName;
 
     int gebaeudeID;
 
     int gebaeudePreis;
+
+    int gebaudeLeistung;
 
 
     int berechneKosten();

@@ -112,6 +112,12 @@ build CMakeFiles/CapicityNew.dir/CapicityMain.cpp.o: CXX_COMPILER__CapicityNew_D
   OBJECT_DIR = CMakeFiles/CapicityNew.dir
   OBJECT_FILE_DIR = CMakeFiles/CapicityNew.dir
 
+build CMakeFiles/CapicityNew.dir/Blueprint.cpp.o: CXX_COMPILER__CapicityNew_Debug /Users/paulkeck/Documents/Uni/CLion_Workspace/CapicityNew/Blueprint.cpp || cmake_object_order_depends_target_CapicityNew
+  DEP_FILE = CMakeFiles/CapicityNew.dir/Blueprint.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++14
+  OBJECT_DIR = CMakeFiles/CapicityNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CapicityNew.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CapicityNew
@@ -120,7 +126,7 @@ build CMakeFiles/CapicityNew.dir/CapicityMain.cpp.o: CXX_COMPILER__CapicityNew_D
 #############################################
 # Link the executable CapicityNew
 
-build CapicityNew: CXX_EXECUTABLE_LINKER__CapicityNew_Debug CMakeFiles/CapicityNew.dir/CapicitySim.cpp.o CMakeFiles/CapicityNew.dir/Building.cpp.o CMakeFiles/CapicityNew.dir/Holz.cpp.o CMakeFiles/CapicityNew.dir/Kunststoff.cpp.o CMakeFiles/CapicityNew.dir/Leer.cpp.o CMakeFiles/CapicityNew.dir/Material.cpp.o CMakeFiles/CapicityNew.dir/Metall.cpp.o CMakeFiles/CapicityNew.dir/Solarpanel.cpp.o CMakeFiles/CapicityNew.dir/Wasserkraftwerk.cpp.o CMakeFiles/CapicityNew.dir/Windkraftwerk.cpp.o CMakeFiles/CapicityNew.dir/CapicityMain.cpp.o
+build CapicityNew: CXX_EXECUTABLE_LINKER__CapicityNew_Debug CMakeFiles/CapicityNew.dir/CapicitySim.cpp.o CMakeFiles/CapicityNew.dir/Building.cpp.o CMakeFiles/CapicityNew.dir/Holz.cpp.o CMakeFiles/CapicityNew.dir/Kunststoff.cpp.o CMakeFiles/CapicityNew.dir/Leer.cpp.o CMakeFiles/CapicityNew.dir/Material.cpp.o CMakeFiles/CapicityNew.dir/Metall.cpp.o CMakeFiles/CapicityNew.dir/Solarpanel.cpp.o CMakeFiles/CapicityNew.dir/Wasserkraftwerk.cpp.o CMakeFiles/CapicityNew.dir/Windkraftwerk.cpp.o CMakeFiles/CapicityNew.dir/CapicityMain.cpp.o CMakeFiles/CapicityNew.dir/Blueprint.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk
   OBJECT_DIR = CMakeFiles/CapicityNew.dir
   POST_BUILD = :

@@ -7,6 +7,6 @@
 #include "Kunststoff.h"
 #include "Metall.h"
 
-Leer::Leer() : Building("Leer", 0, 0, {}) {
+Leer::Leer() : Building("Leer", 0, 0, 0, {}) {
 
 }

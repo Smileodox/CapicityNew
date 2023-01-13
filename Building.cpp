@@ -6,9 +6,10 @@
 #include <sstream>
 #include <map>
 
-Building::Building(std::string name, int id, int gebPreis,
+Building::Building(std::string name, int id, int gebPreis, int leistung,
                    std::map<Material*, int> benMaterialien ) :
-        gebaeudeName(name), gebaeudeID(id), gebaeudePreis(gebPreis), materialien(benMaterialien)
+        gebaeudeName(name), gebaeudeID(id), gebaeudePreis(gebPreis), gebaudeLeistung(leistung),
+        materialien(benMaterialien)
 {
 
 }

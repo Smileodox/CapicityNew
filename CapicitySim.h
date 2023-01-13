@@ -7,6 +7,7 @@
 
 
 #include "Building.h"
+#include "Blueprint.h"
 
 #include <iostream>
 #include <vector>
@@ -17,17 +18,19 @@ class CapicitySim {
 
 private:
 
-    int reihen;
-    int spalten;
-    vector<vector<Building*>> gebaeude;
+   // int reihen;
+   // int spalten;
+   // vector<vector<Building*>> gebaeude;
 
 
 public:
 
-    void printFlaeche();
-    void gebaeudeSetzenMitTest(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz, Building* zuBauendesGebaeude);
-    void gebaeudeSetzen(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz, Building* zuBauendesGebaeude);
+    //void printFlaeche();
+    //void gebaeudeSetzenMitTest(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz, Building* zuBauendesGebaeude);
+    //void gebaeudeSetzen(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz, Building* zuBauendesGebaeude);
     void hauptMenue();
+
+   Blueprint aktuell;
 
 
 
