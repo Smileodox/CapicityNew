@@ -19,7 +19,7 @@ public:
     int planID;
 
     std::string planName;
-
+    float kpi;
     int reihen;
     int spalten;
     
@@ -31,6 +31,8 @@ public:
     void gebaeudeSetzen(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz, Building* zuBauendesGebaeude);
 
     static std::string auffordernName();
+
+    float kennzahl();
 
 };
 

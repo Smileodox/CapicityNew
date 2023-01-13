@@ -31,6 +31,8 @@ void Blueprint::printFlaeche() {
 
     int temp = 0;
 
+    kpi = kennzahl();
+
     for(int i = 0; i < gebaeude.size(); i++) {
         for(int j = 0; j < gebaeude[i].size(); j++) {
             std::cout << gebaeude[i][j]->gebaeudeName; std::cout << "\t\t";
@@ -47,6 +49,7 @@ void Blueprint::printFlaeche() {
         }
     }
     std::cout << "\n\nGesamtkosten:     " << temp<<"\n"<<endl;
+    std::cout << "\n\nKennzahl:     " << kpi<<"\n"<<endl;
 
 
 }
@@ -117,6 +120,25 @@ std::string Blueprint::auffordernName() {
     cout<<"\tBitte Namen für neuen Plan eingeben\n"<<endl;
     cin>> temp;
     return temp;
+}
+
+float Blueprint::kennzahl() {
+
+    int gesLeistung=0, gesKosten=0, anzFelder=0;
+    float kennzahl=0;
+
+    for(int i = 0; i < gebaeude.size(); i++) {
+        for(int j = 0; j < gebaeude[i].size(); j++) {
+          gesLeistung += gebaeude[i][j]->getLeistung();
+          gesKosten += gebaeude[i][j]->berechneKosten();
+          anzFelder += 1;
+        }
+    }
+
+    kennzahl =(float) gesLeistung/(gesKosten*anzFelder);
+
+
+    return kennzahl;
 }
 
 

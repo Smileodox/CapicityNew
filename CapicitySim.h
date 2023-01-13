@@ -8,6 +8,7 @@
 
 #include "Building.h"
 #include "Blueprint.h"
+#include "FunktorVergleich.h"
 
 #include <iostream>
 #include <vector>
@@ -15,7 +16,7 @@
 using namespace std;
 
 class CapicitySim {
-    
+
 public:
 
     void hauptMenue();

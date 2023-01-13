@@ -36,3 +36,7 @@ std::string Building::auflistung()
     details << "- Summe: " << berechneKosten();
     return details.str();
 }
+
+int Building::getLeistung() {
+    return gebaudeLeistung;
+}

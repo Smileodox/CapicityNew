@@ -31,6 +31,8 @@ public:
 
     std::string auflistung();
 
+    int getLeistung();
+
 
     std::map<Material*, int> materialien;
 

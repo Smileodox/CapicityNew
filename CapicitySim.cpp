@@ -31,6 +31,7 @@ void CapicitySim::start() {
 
 void CapicitySim::hauptMenue() {
 
+    FunktorVergleich verg;
     bool loop = true;
     int choice, choice_gebäude, temp_startZeile, temp_startSpalte, temp_zeilenAnz, temp_spaltenAnz;
     int tempIDermittlung = -1;
@@ -160,6 +161,21 @@ void CapicitySim::hauptMenue() {
 
 
             case 4:
+
+
+                for(Blueprint* plan : plaene){
+                    if(plan != plaene[aktuellePlanID] && verg(plaene[aktuellePlanID], plan)){
+
+                        cout<<"Der aktuelle Plan ist identisch zu einem bereits vorhandenen, der aktuelle Plan wird gelöscht\n";
+                        verg.istIdent=true;
+                        break;
+                    }
+                }
+
+                if(verg.istIdent){
+                    plaene.pop_back();
+                }
+
                 for(Blueprint* plan : plaene){
                     if(plan->planID>tempIDermittlung)
                         tempIDermittlung=plan->planID;
@@ -170,6 +186,7 @@ void CapicitySim::hauptMenue() {
 
                 plaene[aktuellePlanID]->initialieserePlan();
 
+                verg.istIdent=false;
 
                 break;
 
