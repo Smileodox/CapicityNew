@@ -24,7 +24,7 @@ void CapicitySim::start() {
     //Flächen Vektor initialisieren
 
     gebaeude = vector<vector<Building*>>(reihen, vector<Building*>(spalten));
-    
+
     for(int i = 0; i < gebaeude.size(); i++) {
         for(int j = 0; j < gebaeude[i].size(); j++) {
             gebaeude[i][j] = new Leer();
@@ -35,16 +35,16 @@ void CapicitySim::start() {
 
 
     //Test
-    printFläche();
+    printFlaeche();
 
-    hauptMenü();
+    hauptMenue();
 
 
 }
 
 
-void CapicitySim::gebäudeSetzenMitTest(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz,
-                                       Building* zuBauendesGebäude)
+void CapicitySim::gebaeudeSetzenMitTest(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz,
+                                        Building* zuBauendesGebaeude)
 {
     bool test = false;
     bool outOfBounds = false;
@@ -61,7 +61,7 @@ void CapicitySim::gebäudeSetzenMitTest(int startZeile, int startSpalte, int zei
     }else{
         for (int i = startZeile - 1; i < startZeile - 1 + zeilenAnz; i++) {
             for (int j = startSpalte - 1; j < startSpalte - 1 + spaltenAnz; j++) {
-                if (gebaeude[i][j]->gebäudeID != 0){
+                if (gebaeude[i][j]->gebaeudeID != 0){
                     test = true;
 
                 }
@@ -79,7 +79,7 @@ void CapicitySim::gebäudeSetzenMitTest(int startZeile, int startSpalte, int zei
 
         for(int i = startZeile - 1; i < startZeile - 1 + zeilenAnz; i++){
             for(int j = startSpalte - 1; j < startSpalte - 1 + spaltenAnz; j++){
-                gebaeude[i][j] = zuBauendesGebäude;
+                gebaeude[i][j] = zuBauendesGebaeude;
             }
         }
 
@@ -89,20 +89,20 @@ void CapicitySim::gebäudeSetzenMitTest(int startZeile, int startSpalte, int zei
 
 }
 
-void CapicitySim::printFläche() {
+void CapicitySim::printFlaeche() {
 
     int temp = 0;
 
     for(int i = 0; i < gebaeude.size(); i++) {
         for(int j = 0; j < gebaeude[i].size(); j++) {
-            std::cout << gebaeude[i][j]->gebäudeName; std::cout << "\t\t";
+            std::cout << gebaeude[i][j]->gebaeudeName; std::cout << "\t\t";
         }
         std::cout << "\n\n";
     }
 
     for(int i = 0; i < gebaeude.size(); i++) {
         for(int j = 0; j < gebaeude[i].size(); j++) {
-            if(gebaeude[i][j]->gebäudeID != 0) {
+            if(gebaeude[i][j]->gebaeudeID != 0) {
                 temp += gebaeude[i][j]->berechneKosten();
                 cout << "[" << i << "][" << j << "]" << gebaeude[i][j]->auflistung() << endl;
             }
@@ -113,7 +113,7 @@ void CapicitySim::printFläche() {
 
 }
 
-void CapicitySim::hauptMenü() {
+void CapicitySim::hauptMenue() {
 
     bool loop = true;
     int choice, choice_gebäude, temp_startZeile, temp_startSpalte, temp_zeilenAnz, temp_spaltenAnz;
@@ -157,8 +157,8 @@ void CapicitySim::hauptMenü() {
                         cout << "Bitte Spaltenanzahl des Gebäudes eingeben\n";
                         cin >> temp_spaltenAnz;
 
-                        gebäudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
-                                             temp_spaltenAnz, new Wasserkraftwerk());
+                        gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
+                                              temp_spaltenAnz, new Wasserkraftwerk());
                         break;
 
                     case 2:
@@ -176,8 +176,8 @@ void CapicitySim::hauptMenü() {
                         cout << "Bitte Spaltenanzahl des Gebäudes eingeben\n";
                         cin >> temp_spaltenAnz;
 
-                        gebäudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
-                                             temp_spaltenAnz, new Windkraftwerk());
+                        gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
+                                              temp_spaltenAnz, new Windkraftwerk());
 
                         break;
 
@@ -196,8 +196,8 @@ void CapicitySim::hauptMenü() {
                         cout << "Bitte Spaltenanzahl des Gebäudes eingeben\n";
                         cin >> temp_spaltenAnz;
 
-                        gebäudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
-                                             temp_spaltenAnz, new Solarpanel());
+                        gebaeudeSetzenMitTest(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
+                                              temp_spaltenAnz, new Solarpanel());
 
                         break;
 
@@ -227,15 +227,15 @@ void CapicitySim::hauptMenü() {
                 //}
                 //}
 
-                gebäudeSetzen(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
-                              temp_spaltenAnz, new Leer());
+                gebaeudeSetzen(temp_startZeile, temp_startSpalte, temp_zeilenAnz,
+                               temp_spaltenAnz, new Leer());
 
                 break;
 
             case 3:
                 cout << "Sie haben Ausgabe des aktuellen Bauplans gewählt\n" << endl;
 
-                printFläche();
+                printFlaeche();
 
                 break;
 
@@ -250,11 +250,11 @@ void CapicitySim::hauptMenü() {
 }
 
 void
-CapicitySim::gebäudeSetzen(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz, Building* zuBauendesGebäude) {
+CapicitySim::gebaeudeSetzen(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz, Building* zuBauendesGebaeude) {
 
     for(int i = startZeile - 1; i < startZeile - 1 + zeilenAnz; i++){
         for(int j = startSpalte - 1; j < startSpalte - 1 + spaltenAnz; j++){
-            gebaeude[i][j] = zuBauendesGebäude;
+            gebaeude[i][j] = zuBauendesGebaeude;
         }
     }
 

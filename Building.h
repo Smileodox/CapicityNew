@@ -16,11 +16,11 @@ class Building {
 public:
     Building(std::string name, int id, int gebPreis, std::vector<Material*> benMaterialien);
 
-    std::string gebäudeName;
+    std::string gebaeudeName;
 
-    int gebäudeID;
+    int gebaeudeID;
 
-    int gebäudePreis;
+    int gebaeudePreis;
 
 
     int berechneKosten();

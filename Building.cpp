@@ -7,7 +7,7 @@
 
 Building::Building(std::string name, int id, int gebPreis,
                    std::vector<Material*> benMaterialien ) :
-        gebäudeName(name), gebäudeID(id), gebäudePreis(gebPreis), materialien(benMaterialien)
+        gebaeudeName(name), gebaeudeID(id), gebaeudePreis(gebPreis), materialien(benMaterialien)
 {
 
 }
@@ -16,7 +16,7 @@ Building::Building(std::string name, int id, int gebPreis,
 
 int Building::berechneKosten() {
 
-    int result = gebäudePreis;
+    int result = gebaeudePreis;
 
     for(auto material : materialien) {
         result += material->preis;
@@ -27,7 +27,7 @@ int Building::berechneKosten() {
 std::string Building::auflistung()
 {
     std::stringstream details;
-    details << gebäudeName << ": ";
+    details << gebaeudeName << ": ";
     for (auto material : materialien) {
         details << material->materialName << "(" << material->preis << ") ";
     }

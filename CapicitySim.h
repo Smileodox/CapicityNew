@@ -24,10 +24,10 @@ private:
 
 public:
 
-    void printFläche();
-    void gebäudeSetzenMitTest(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz, Building* zuBauendesGebäude);
-    void gebäudeSetzen(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz, Building* zuBauendesGebäude);
-    void hauptMenü();
+    void printFlaeche();
+    void gebaeudeSetzenMitTest(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz, Building* zuBauendesGebaeude);
+    void gebaeudeSetzen(int startZeile, int startSpalte, int zeilenAnz, int spaltenAnz, Building* zuBauendesGebaeude);
+    void hauptMenue();
 
 
 
