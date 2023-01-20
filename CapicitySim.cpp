@@ -4,7 +4,6 @@
 
 
 #include "CapicitySim.h"
-#include "Building.h"
 #include "Leer.h"
 #include "Windkraftwerk.h"
 #include "Wasserkraftwerk.h"
@@ -160,6 +159,9 @@ void CapicitySim::hauptMenue() {
 
             case 4: {
 
+                cout << "Sie haben Ausgabe ALLER Pläne gewählt" << endl;
+
+
                 vector<Blueprint *> plaeneKopie = plaene;
 
                 std::sort(plaeneKopie.begin(), plaeneKopie.end(), [](Blueprint* p1, Blueprint* p2)
@@ -191,7 +193,7 @@ void CapicitySim::hauptMenue() {
                     plaene.pop_back();
                 }
 
-                for (Blueprint *plan: plaene) {
+                for (Blueprint* plan: plaene) {
                     if (plan->planID > tempIDermittlung)
                         tempIDermittlung = plan->planID;
                 }
@@ -202,6 +204,8 @@ void CapicitySim::hauptMenue() {
                 plaene[aktuellePlanID]->initialieserePlan();
 
                 verg.istIdent = false;
+
+                tempIDermittlung = -1;
 
                 break;
         }

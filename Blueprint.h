@@ -9,6 +9,7 @@
 #include <vector>
 #include <iostream>
 
+
 using namespace std;
 
 class Blueprint {
@@ -71,11 +72,11 @@ void Blueprint::gebaeudeSetzenMitTest(int startZeile, int startSpalte, int zeile
 
     }
 
-    if(test == true) {
+    if(test) {
 
         cout << "Gebäude kollidiert mit anderen Gebäuden, Vorgang wird abgebrochen\n" << endl;
 
-    } else if(outOfBounds != true){
+    } else if(!outOfBounds){
 
         gebaeudeSetzen<B>(startZeile, startSpalte, zeilenAnz, spaltenAnz);
 

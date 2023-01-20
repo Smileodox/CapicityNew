@@ -94,6 +94,7 @@ for(vector<Building*> row : gebaeude) {
         delete geb;
     }
 
+
 }
 
 }
